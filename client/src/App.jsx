@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
-import ControllerView from './component/controllerView.jsx';
-import DisplayView from './component/displayView.jsx';
+import ControllerView from './component/ControllerView.jsx';
+import DisplayView from './component/DisplayView.jsx';
 
 const SERVER_URL =
   import.meta.env.VITE_SOCKET_SERVER_URL || "http://localhost:3000";
