@@ -3,9 +3,10 @@ import { io } from 'socket.io-client';
 import ControllerView from './component/controllerView.jsx';
 import DisplayView from './component/displayView.jsx';
 
+const SERVER_URL =
+  import.meta.env.VITE_SOCKET_SERVER_URL || "http://localhost:3000";
+// const SERVER_URL = "https://192.168.50.162:3000";
 
-const SERVER_URL = "https://192.168.50.162:3000";
-// const SERVER_URL = "http://localhost:3000"; 
 
 const App = () => {
   const [mode, setMode] = useState(null);

@@ -1,16 +1,17 @@
 const express = require('express');
-const https = require('https');
+// const https = require('https');
 const { Server } = require('socket.io');
 const fs = require('fs');
 const app = express();
 
-// 💡 read the certificate files
-const options = {
-    key: fs.readFileSync('./key.pem'),
-    cert: fs.readFileSync('./cert.pem')
-  };
-
-const server = https.createServer(options, app);
+// // 💡 read the certificate files
+// const options = {
+//     key: fs.readFileSync('./key.pem'),
+//     cert: fs.readFileSync('./cert.pem')
+//   };
+const http = require('http');
+const server = http.createServer(app);
+// const server = https.createServer(options, app);
 
 // Add root route handler
 app.get('/', (req, res) => {
@@ -33,7 +34,7 @@ const io = new Server(server, {
     }
   });
 
-const PORT = 3000;
+  const PORT = process.env.PORT || 3000;
 
 io.on('connection', (socket) => {
     console.log('device connected:', socket.id);
@@ -55,5 +56,5 @@ io.on('connection', (socket) => {
 
 
   server.listen(PORT, '0.0.0.0', () => {
-    console.log(`HTTPS Server is running on https://192.168.50.162:${PORT}`);
+    console.log(`Server running on port ${PORT}`);
   });
