@@ -34,7 +34,7 @@ cd client
 pnpm run dev
 ```
 
-**3. Open `https://192.168.50.162:5174/` in both your computer and phone browsers.**
+**3. Open `https://gyroscope-client.onrender.com/` in both your computer and phone browsers.**
 
 - On your computer: Click "💻 電腦顯示器"
 - On your phone: Click "📱 手機控制器", then "Click to start calibration"
